@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+}
+.container {
+    height: 100vh;
+    background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+}
+.top-bar {
+    display: flex;
+    flex-direction: row;
+}
+.todo-menu {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    align-items: center;
+}
+.todo-input {
+    display: flex;
+    width: 500px;
+}
+.todo-task {
+    display: flex;
+    flex: 1 1 0;
+}
+.main-window {
+    display: flex;
+}
+.left-column {
+    flex: 0 0 20%;
+}
+.todo-list-window{
+    display: flex;
+    flex: 1 1 0;
+    align-items: flex-start;
+}
+.right-column {
+    flex: 0 0 20%;
+}
