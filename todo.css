@@ -10,9 +10,9 @@ body {
     flex-direction: row;
 }
 .todo-menu {
+    
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
-    cursor: pointer;
     color: azure;
     display: flex;
     flex-direction: column;
@@ -26,6 +26,7 @@ body {
 .todo-input {
     display: flex;
     width: 500px;
+
 }
 .todo-task {
     display: flex;
@@ -41,13 +42,11 @@ body {
     display: inline-block;
     font-family: cursive;
     font-size: 12px;
-    border-radius: 2px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
     cursor: pointer;
 }
 .main-window {
     display: flex;
+    
 }
 .left-column {
     flex: 0 0 20%;
@@ -56,6 +55,11 @@ body {
     display: flex;
     flex: 1 1 0;
     align-items: flex-start;
+    padding: 8px;
+    list-style-type: circle;
+    font-size: 30px;
+    color: #818181;
+    display: block;
 }
 .right-column {
     flex: 0 0 20%;
