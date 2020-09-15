@@ -14,6 +14,10 @@ body {
     flex-direction: column;
     flex: 1 1 0;
     align-items: center;
+    display: flex;
+    padding-top: 300px;
+    font-family: cursive;
+    font-size:60px
 }
 .todo-input {
     display: flex;
