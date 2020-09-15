@@ -9,8 +9,7 @@ body {
     display: flex;
     flex-direction: row;
 }
-.todo-menu {
-    
+.todo-menu {    
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     color: azure;
@@ -68,9 +67,9 @@ body {
     flex: 1 1 0;
     padding: 8px;
     font-size: 30px;
-    color: #818181;
+    color: #0A0909;
     display: block;
-    /*! border-radius: 20px; */
+    font-family: cursive;
 }
 ul li {
     position: relative;
@@ -89,4 +88,7 @@ ul li:hover {
 }
 button {
     border-radius: 3vh;
+    font-family: cursive;
+    background: rgb(255, 246, 246);
+    border-style: none;
 }
