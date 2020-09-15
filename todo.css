@@ -28,7 +28,6 @@ body {
 .todo-task {
     display: flex;
     flex: 1 1 0;
-    height: 5vh;
     border-radius: 15px 0px 0px 15px;
     background-color:rgb(138, 162, 172);
     border: darkgray;
@@ -40,8 +39,9 @@ body {
     font-family: cursive;
     font-size: 12px;
     cursor: pointer;
+    height: 5vh;
 }
-.add{
+.add {
     border-radius: 0px 15px 15px 0px;
     background-color:rgb(162, 178, 182);
     border: darkgray;
@@ -56,32 +56,37 @@ body {
 }
 .add:hover {
     background-color: rgb(119, 118, 118);
-  }
+}
 .main-window {
     display: flex;
 }
 .left-column {
     flex: 0 0 20%;
 }
-.todo-list-window{
+.todo-list-window {
     display: flex;
     flex: 1 1 0;
     padding: 8px;
     font-size: 30px;
     color: #818181;
     display: block;
+    /*! border-radius: 20px; */
 }
 ul li {
     position: relative;
-    padding: 12px 8px 12px 40px;
+    padding: 8px 12px 8px 40px;
     background: rgb(255, 246, 246);
     font-size: 18px;
     border: 1px solid black;
-  }
+    border-radius: 2vh;
+    border-style: dashed;
+}
 ul li:hover {
     background: rgb(153, 151, 151);
-  }
- 
-.right-column {
+}
+ .right-column {
     flex: 0 0 20%;
+}
+button {
+    border-radius: 3vh;
 }
