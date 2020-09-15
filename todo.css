@@ -28,6 +28,7 @@ body {
 .todo-task {
     display: flex;
     flex: 1 1 0;
+    height: 5vh;
     border-radius: 15px 0px 0px 15px;
     background-color:rgb(138, 162, 172);
     border: darkgray;
