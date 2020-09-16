@@ -38,7 +38,7 @@ body {
     font-family: cursive;
     font-size: 12px;
     cursor: pointer;
-    height: 5vh;
+    height: 200%;
 }
 .add {
     border-radius: 0px 15px 15px 0px;
@@ -52,6 +52,7 @@ body {
     font-family: cursive;
     font-size: 12px;
     cursor: pointer;
+    height: 200%;
 }
 .add:hover {
     background-color: rgb(119, 118, 118);
@@ -60,12 +61,14 @@ body {
     display: flex;
 }
 .left-column {
+    display: flex;
     flex: 0 0 20%;
+    background-color: #0A0909;
 }
 .todo-list-window {
     display: flex;
     flex: 1 1 0;
-    padding: 8px;
+    padding-top: 8px;
     font-size: 30px;
     color: #0A0909;
     display: block;
@@ -83,8 +86,10 @@ ul li {
 ul li:hover {
     background: rgb(153, 151, 151);
 }
- .right-column {
+.right-column {
+    display: flex;
     flex: 0 0 20%;
+    background-color: #0A0909;
 }
 button {
     border-radius: 3vh;
