@@ -59,19 +59,19 @@ body {
 }
 .main-window {
     display: flex;
+    flex-direction: row;
 }
 .left-column {
     display: flex;
     flex: 0 0 20%;
-    background-color: #0A0909;
+    background-color: white;
 }
 .todo-list-window {
-    display: flex;
+    display: block;
     flex: 1 1 0;
     padding-top: 8px;
     font-size: 30px;
-    color: #0A0909;
-    display: block;
+    color: black;
     font-family: cursive;
 }
 ul li {
@@ -89,7 +89,7 @@ ul li:hover {
 .right-column {
     display: flex;
     flex: 0 0 20%;
-    background-color: #0A0909;
+    background-color: white;
 }
 button {
     border-radius: 3vh;
