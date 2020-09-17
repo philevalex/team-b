@@ -7,7 +7,7 @@ body {
 }
 .top-bar {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 .todo-menu {    
     -webkit-transition-duration: 0.4s;
@@ -23,6 +23,8 @@ body {
 .todo-input {
     display: flex;
     width: 500px;
+    margin-bottom: 20px;
+    height: 15px;
 }
 .todo-task {
     display: flex;
