@@ -1,102 +1,100 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 .container {
-    height: 100vh;
-    background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+  height: 100vh;
+  background: linear-gradient(45deg, #eecfba, #c5dde8);
 }
 .top-bar {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-.todo-menu {    
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    color: azure;
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 0;
-    align-items: center;
-    font-family: cursive;
-    font-size:50px
+.todo-menu {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  color: azure;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  align-items: center;
+  font-family: cursive;
+  font-size: 50px;
 }
 .todo-input {
-    display: flex;
-    width: 500px;
-    margin-bottom: 20px;
-    height: 30px;
-
+  display: flex;
+  width: 500px;
+  margin-bottom: 20px;
+  height: 30px;
 }
 .todo-task {
-    display: flex;
-    flex: 1 1 0;
-    border-radius: 15px 0px 0px 15px;
-    background-color:rgb(138, 162, 172);
-    border: darkgray;
-    color: #ffffff;
-    padding: 0px 17px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: cursive;
-    font-size: 12px;
-    cursor: pointer;
-
+  display: flex;
+  flex: 1 1 0;
+  border-radius: 15px 0px 0px 15px;
+  background-color: rgb(138, 162, 172);
+  border: darkgray;
+  color: #ffffff;
+  padding: 0px 17px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: cursive;
+  font-size: 12px;
+  cursor: pointer;
 }
 .add {
-    border-radius: 0px 15px 15px 0px;
-    background-color:rgb(162, 178, 182);
-    border: darkgray;
-    color: white;
-    padding: 0px 17px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: cursive;
-    font-size: 12px;
-    cursor: pointer;
-
+  border-radius: 0px 15px 15px 0px;
+  background-color: rgb(162, 178, 182);
+  border: darkgray;
+  color: white;
+  padding: 0px 17px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: cursive;
+  font-size: 12px;
+  cursor: pointer;
 }
 .add:hover {
-    background-color: rgb(119, 118, 118);
+  background-color: rgb(119, 118, 118);
 }
 .main-window {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 .left-column {
-    display: flex;
-    flex: 0 0 20%;
-    background-color: white;
+  display: flex;
+  flex: 0 0 20%;
 }
 .todo-list-window {
-    display: block;
-    flex: 1 1 0;
-    padding-top: 8px;
-    font-size: 30px;
-    color: black;
-    font-family: cursive;
+  display: block;
+  flex: 1 1 0;
+  padding-top: 8px;
+  font-size: 30px;
+  color: black;
+  font-family: cursive;
+}
+.task-list {
+  padding-left: 0px;
 }
 ul li {
-    position: relative;
-    padding: 8px 12px 8px 40px;
-    background: rgb(255, 246, 246);
-    font-size: 18px;
-    border: 1px solid black;
-    border-radius: 2vh;
-    border-style: dashed;
+  position: relative;
+  padding: 8px 12px 8px 40px;
+  background: rgb(255, 246, 246);
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 2vh;
+  border-style: dashed;
 }
 ul li:hover {
-    background: rgb(153, 151, 151);
+  background: rgb(153, 151, 151);
 }
 .right-column {
-    display: flex;
-    flex: 0 0 20%;
-    background-color: white;
+  display: flex;
+  flex: 0 0 20%;
 }
 button {
-    border-radius: 3vh;
-    font-family: cursive;
-    background: rgb(255, 246, 246);
-    border-style: none;
+  border-radius: 3vh;
+  font-family: cursive;
+  background: rgb(255, 246, 246);
+  border-style: none;
 }
