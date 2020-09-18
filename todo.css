@@ -10,7 +10,6 @@ body {
   flex-direction: column;
 }
 .todo-menu {
-  -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   color: azure;
   display: flex;
@@ -76,7 +75,7 @@ body {
 .task-list {
   padding-left: 0px;
 }
-ul li {
+.list_item{
   position: relative;
   padding: 8px 12px 8px 40px;
   background: rgb(255, 246, 246);
@@ -85,7 +84,7 @@ ul li {
   border-radius: 2vh;
   border-style: dashed;
 }
-ul li:hover {
+.list_item:hover {
   background: rgb(153, 151, 151);
 }
 .right-column {
@@ -93,7 +92,7 @@ ul li:hover {
   flex: 0 0 20%;
 }
 button {
-  border-radius: 3vh;
+  border-radius: 30px;
   font-family: cursive;
   background: rgb(255, 246, 246);
   border-style: none;
