@@ -75,7 +75,7 @@ body {
 .task-list {
   padding-left: 0px;
 }
-.list_item{
+.list_item__todo{
   position: relative;
   padding: 8px 12px 8px 40px;
   background: rgb(255, 246, 246);
@@ -84,7 +84,7 @@ body {
   border-radius: 2vh;
   border-style: dashed;
 }
-.list_item:hover {
+.list_item__todo:hover {
   background: rgb(153, 151, 151);
 }
 .right-column {
