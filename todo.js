@@ -1,31 +1,44 @@
-"use strict"
-const todos = [1,2,3,4];
+"use strict";
+const todoItems = [];
 
-const id=0;
+const id = 0;
 
 function getId() {
-    id++;
-    return id;
+  id++;
+  return id;
 }
-function addtodo (newTodo){
-    todos.push({id: getId(), title: NewTodo, isComplete: false });
+function addTodo(newTodo) {
+  const todo = {
+    text,
+    checked: false,
+    id: Date.now(),
+  };
+  todoItems.push(todo);
+  console.log(todoItems);
 }
-function deletetodo (todoid)
-{
-    const index = todos.findIndex((todo) => todo.id === todoId);
+function deleteTodo(key) {
+  const index = todoItems.findIndex((item) => item.id === Number(key));
+  const todo = {
+    deleted: true,
+    ...todoItems[index],
+  };
+  todoItems = todoItems.filter((item) => item.id !== Number(key));
+  renderTodo(todo);
+}
+function changeStatus(itemid, checked) {
+  todo[itemid].status = checked;
+  const index = todoItems.findIndex((item) => item.id === Number(key));
+ if (index === -1) {
+  throw new Error("Id not found");
+todos[index].status = isComplete;
+};
+
+function changeTodoTitle(itemid, text) {
+    todo[itemid].status = checked;
+    const index = todoItems.findIndex((item) => item.id === Number(key));
     if (index === -1) {
         throw new Error('Id not found');
     }
-    todos.splice(index, 1)
-
-}
-function statusId()
-{
-    todos.push(newTodo)
-
-}
-function  ()
-{
-    todos.push(newTodo)
-
+    todos[index].text = text;
+};
 }
