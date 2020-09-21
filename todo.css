@@ -81,7 +81,7 @@ body {
   background: rgb(255, 246, 246);
   font-size: 18px;
   border: 1px solid black;
-  border-radius: 2vh;
+  border-radius: 18px;
   border-style: dashed;
 }
 .list_item__todo:hover {
@@ -91,7 +91,7 @@ body {
   display: flex;
   flex: 0 0 20%;
 }
-button {
+.delete-task-button {
   border-radius: 30px;
   font-family: cursive;
   background: rgb(255, 246, 246);
