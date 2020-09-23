@@ -1,7 +1,7 @@
 const render = ({ todos, editTodoId }) => `
 <div class="container">
 <div class="top-bar">
-  
+
     <div class="todo-menu">TODO LIST
     <form onsumbit="onAddNewTodo(this, event)"> 
     <div class="todo-input">
@@ -80,7 +80,7 @@ const getFormData = (formElement) => {
 const onAddNewTodo = (formElement, event) => {
   event.preventDefault();
   const formData = getFormData(formElement);
-  const data = {
+  const newTodo = {
     text: formData.text,
     checked: formData.checked === 'on',
   };
@@ -88,6 +88,7 @@ const onAddNewTodo = (formElement, event) => {
     todos: addTodo(state.todos, newTodo)
   });
 };
+
 const main = () => {
     document.getElementById('app').innerHTML = render(state);
 };
