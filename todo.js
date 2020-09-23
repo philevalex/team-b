@@ -1,14 +1,16 @@
 const render = ({ todos, editTodoId }) => `
 <div class="container">
 <div class="top-bar">
-  <form onsumbit="onAddNewTodo(this, event)"> 
+  
     <div class="todo-menu">TODO LIST
+    <form onsumbit="onAddNewTodo(this, event)"> 
     <div class="todo-input">
             <input class="todo-task" name ="text" type ="text" placeholder="Enter item" />
             <button class="add" type ="submit">add</button>
         </div>
+        </form>
     </div>
-    </form>
+  
 </div>
 <div class="main-window">
     <div class="left-column"></div>
@@ -86,9 +88,6 @@ const onAddNewTodo = (formElement, event) => {
     todos: addTodo(state.todos, newTodo)
   });
 };
-
-
-
 const main = () => {
     document.getElementById('app').innerHTML = render(state);
 };
