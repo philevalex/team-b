@@ -3,7 +3,7 @@ const render = ({ todos, editTodoId }) => `
 <div class="top-bar">
 
     <div class="todo-menu">TODO LIST
-    <form onsumbit="onAddNewTodo(this, event)"> 
+    <form onsubmit="onAddNewTodo(this, event)"> 
     <div class="todo-input">
             <input class="todo-task" name ="text" type ="text" placeholder="Enter item" />
             <button class="add" type ="submit">add</button>
@@ -30,7 +30,7 @@ const render = ({ todos, editTodoId }) => `
          `
             : `
             <li class="list_item__todo">
-            ${todo.checked ? `<input type="checkbox" checked=""> `: ` `}
+            ${todo.checked ? `<input type="checkbox" checked=" "> `: ` `}
             <span class="todo-text"> ${todo.text} </span>                    
             <button class="delete-task-button" name="delete-2" type="reset">X</button>
             <button class="edit-task-button" name="delete-1" type="edit">edit</button>
@@ -51,32 +51,32 @@ const render = ({ todos, editTodoId }) => `
 </div>
 `;
 
-const state = {
+let state = {
   todos: [
       { id: 1, text: "My text", checked: false },
       { id: 2, text: "foor", checked: true },
       { id: 3, text: "bara", checked: false }
     ],
-  editTodoId: 3,
+  editTodoId: null,
 };
 const renderToDom = (template) => {
   document.getElementById('app').innerHTML = template;
 };
 
-const setState = (newStatePart) => {
+let setState = (newStatePart) => {
   state = {...state, ...newStatePart};
   const newHtml = render (state);
   renderToDom(newHtml);
 };
 
 const getFormData = (formElement) => {
-  const formData = new FormData(formElement);
-  const data = {};
-  for (const [key, value] of formData.entries()) {
-    data[key]=value;
-  }
-  return data;
-}
+    const formData = new FormData(formElement);
+    const data = {};
+    for (const [key, value] of formData.entries()) {
+        data[key] = value;
+    }
+    return data;
+};
 const onAddNewTodo = (formElement, event) => {
   event.preventDefault();
   const formData = getFormData(formElement);
@@ -112,7 +112,7 @@ function addTodo(todos, {text, checked=false}) {
 }
 
 function deleteTodo(todos, todoId) {
-  return todos.filter(({ id }) => id !== todoId);
+  return todos.filter((id) => id !== todoId);
 }
 
 function changeStatus(todos, todoId, checked) {
