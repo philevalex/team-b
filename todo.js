@@ -107,7 +107,7 @@ const onEditTodo = (editTodoId) => {
     editTodoId,
   });
 };
-const onRemovoTodo= (todoId) => { 
+const onRemoveTodo= (todoId) => { 
 setState({
   todos: deleteTodo(state.todos, todoId)
 });
@@ -136,7 +136,7 @@ function addTodo(todos, {text}) {
 }
 
 function deleteTodo(todos, todoId) {
-  return todos.filter((id) => id !== todoId);
+  return todos.filter((todo) => id !== todoId);
 }
 
 function changeStatus(todos, todoId, checked) {
