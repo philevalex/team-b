@@ -27,18 +27,20 @@ const render = ({ todos, editTodoId }) => `
         <input name="checked" type ="checkbox" />
         <input type="text" type = "text" value="${todo.text}"/>
         <button type ="submit"> Save </button>
-            <button class="delete-task-button" name="delete-1" type="reset">X</button>
-            <button onclick="onEditTodo(${todo.id}) class="edit-task-button" name="edit" type="edit">edit</button>
+            <button onclick="onSaveTitle(${todo.id}) class="edit-task-button" name="edit" type="edit">edit</button>
             </li>
-            </form>
+            
          `
             : `
+            
             <li class="list_item__todo">
             ${todo.checked ? `<input name="checked" type ="checkbox"> `: ` `}
             <span class="todo-text"> ${todo.text} </span>                    
-            <button class="delete-task-button" onclick="onSaveTodo(${todo.id})" name="delete-2" type="reset">X</button>
+            <button class="delete-task-button" onclick="onRemoveTodo(${todo.id})" name="delete-2" type="reset">X</button>
             <button class="edit-task-button" onclick="onEditTodo(${todo.id})" name="edit type="edit">edit</button>
+           
         </li>
+        </form>
          `
          ).join('')}   
            
@@ -57,9 +59,7 @@ const render = ({ todos, editTodoId }) => `
 
 let state = {
   todos: [
-      { id: 1, text: "My text", checked: false },
-      { id: 2, text: "foor", checked: true },
-      { id: 3, text: "bara", checked: true }
+      
     ],
     editTodoId: null,
 };
@@ -107,7 +107,7 @@ const onEditTodo = (editTodoId) => {
     editTodoId,
   });
 };
-const onRemovoTodo= (todoid) => { 
+const onRemovoTodo= (todoId) => { 
 setState({
   todos: deleteTodo(state.todos, todoId)
 });
