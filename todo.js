@@ -5,6 +5,7 @@ const render = ({ todos, editTodoId }) => `
     <div class="todo-menu">TODO LIST
     <form onsubmit="onAddNewTodo(this, event)"> 
     <div class="todo-input">
+            
             <input class="todo-task" name ="text" type ="text" placeholder="Enter item" />
             <button class="add" type ="submit">add</button>
         </div>
@@ -23,14 +24,16 @@ const render = ({ todos, editTodoId }) => `
             ? `
         <li class="list_item__todo">
         <input type="text" value="${todo.text}"/>
+        <input name="checked" type ="checkbox" />
         <button> Save </button>
+        
             <button class="delete-task-button" name="delete-1" type="reset">X</button>
-            <button class="edit-task-button" name="delete-1" type="edit">edit</button>
+            <button onclick="onEditTodo(${todo.id})class="edit-task-button" name="delete-1" type="edit">edit</button>
         </li>
          `
             : `
             <li class="list_item__todo">
-            ${todo.checked ? `<input type="checkbox" checked=" "> `: ` `}
+            ${todo.checked ? `<input name="checked" type ="checkbox"> `: ` `}
             <span class="todo-text"> ${todo.text} </span>                    
             <button class="delete-task-button" name="delete-2" type="reset">X</button>
             <button class="edit-task-button" name="delete-1" type="edit">edit</button>
@@ -55,9 +58,9 @@ let state = {
   todos: [
       { id: 1, text: "My text", checked: false },
       { id: 2, text: "foor", checked: true },
-      { id: 3, text: "bara", checked: false }
+      { id: 3, text: "bara", checked: true }
     ],
-  editTodoId: null,
+ 
 };
 const renderToDom = (template) => {
   document.getElementById('app').innerHTML = template;
@@ -89,6 +92,11 @@ const onAddNewTodo = (formElement, event) => {
   });
 };
 
+const onEditTodo = (editTodoId) => {
+  setState({
+    editTodoId
+  });
+}
 const main = () => {
     document.getElementById('app').innerHTML = render(state);
 };
