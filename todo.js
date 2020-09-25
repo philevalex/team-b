@@ -22,17 +22,15 @@ const render = ({ todos, editTodoId }) => `
         ${todos.map((todo) =>
           todo.id === editTodoId
             ? `
-            <form onsubmit="onSaveTitle(this, event, ${todo.id})">
+          <form onsubmit="onSaveTitle(this, event, ${todo.id})">
         <li class="list_item__todo">
         <input name="checked" type ="checkbox" />
-        <input type="text" type = "text" value="${todo.text}"/>
-        <button type ="submit"> Save </button>
-            <button onclick="onSaveTitle(${todo.id}) class="edit-task-button" name="edit" type="edit">edit</button>
+        <input type="title" type = "text" value="${todo.text}" />
+        <button> Save </button>
+            </form>
             </li>
-            
          `
             : `
-            
             <li class="list_item__todo">
             ${todo.checked ? `<input name="checked" type ="checkbox"> `: ` `}
             <span class="todo-text"> ${todo.text} </span>                    
@@ -40,22 +38,23 @@ const render = ({ todos, editTodoId }) => `
             <button class="edit-task-button" onclick="onEditTodo(${todo.id})" name="edit type="edit">edit</button>
            
         </li>
-        </form>
+        
          `
          ).join('')}   
-           
-            <li class="list_item__todo">
-                <input type="checkbox">
-                <span class="todo-text"> Milk </span>
-                <button class="delete-task-button" name="delete-3" type="reset">X</button>
-                <button class="edit-task-button" name="edit" type="edit">edit</button>
-            </li>
         </ul>
     </div>
     <div class="right-column"></div>
 </div>
 </div>
 `;
+
+let id = 0;
+
+function getId() {
+  id++;
+  
+  return id;
+}
 
 let state = {
   todos: [
@@ -72,6 +71,7 @@ let setState = (newStatePart) => {
   const newHtml = render (state);
   renderToDom(newHtml);
 };
+
 
 const getFormData = (formElement) => {
     const formData = new FormData(formElement);
@@ -97,7 +97,7 @@ const onSaveTitle = (formElement, event, todoId) => {
   event.preventDefault();
   const formData = getFormData(formElement);
   setState({
-    todos: changeTodoText(state.todos, todoId, FormData.text),
+    todos: changeTodoText(state.todos, todoId, formData.text),
     editTodoId:null,
   });
 }
@@ -119,12 +119,7 @@ const main = () => {
 
 main();
 
-let id = 0;
 
-function getId() {
-  id++;
-  return id;
-}
 
 function addTodo(todos, {text}) {
   const todo = {
@@ -136,7 +131,7 @@ function addTodo(todos, {text}) {
 }
 
 function deleteTodo(todos, todoId) {
-  return todos.filter((todo) => id !== todoId);
+  return todos.filter((id) => id.id !== todoId);
 }
 
 function changeStatus(todos, todoId, checked) {
