@@ -25,7 +25,7 @@ const render = ({ todos, editTodoId }) => `
           <form onsubmit="onSaveTitle(this, event, ${todo.id})">
         <li class="list_item__todo">
         <input name="checked" type ="checkbox" />
-        <input type="title" type = "text" value="${todo.text}" />
+        <input name="title" type ="text" value="${todo.text}" />
         <button> Save </button>
             </form>
             </li>
@@ -35,7 +35,7 @@ const render = ({ todos, editTodoId }) => `
             ${todo.checked ? `<input name="checked" type ="checkbox"> `: ` `}
             <span class="todo-text"> ${todo.text} </span>                    
             <button class="delete-task-button" onclick="onRemoveTodo(${todo.id})" name="delete-2" type="reset">X</button>
-            <button class="edit-task-button" onclick="onEditTodo(${todo.id})" name="edit type="edit">edit</button>
+            <button class="edit-task-button" onclick="onEditTodo(${todo.id})" name="edit" type="edit">edit</button>
            
         </li>
         
@@ -58,7 +58,10 @@ function getId() {
 
 let state = {
   todos: [
-      
+
+          { id: 1, text: "My text", checked: false },
+          { id: 2, text: "foor", checked: true },
+          { id: 3, text: "bara", checked: false }
     ],
     editTodoId: null,
 };
@@ -100,13 +103,14 @@ const onSaveTitle = (formElement, event, todoId) => {
     todos: changeTodoText(state.todos, todoId, formData.text),
     editTodoId:null,
   });
-}
+};
 
 const onEditTodo = (editTodoId) => {
   setState({
     editTodoId,
   });
 };
+
 const onRemoveTodo= (todoId) => { 
 setState({
   todos: deleteTodo(state.todos, todoId)
