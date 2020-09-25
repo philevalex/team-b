@@ -8,6 +8,7 @@ const render = ({ todos, editTodoId }) => `
             
             <input class="todo-task" name ="text" type ="text" placeholder="Enter item" />
             <button class="add" type ="submit">add</button>
+            
         </div>
         </form>
     </div>
@@ -25,7 +26,7 @@ const render = ({ todos, editTodoId }) => `
           <form onsubmit="onSaveTitle(this, event, ${todo.id})">
         <li class="list_item__todo">
         <input name="checked" type ="checkbox" />
-        <input name="title" type ="text" value="${todo.text}" />
+        <input name="text" type ="text" value="${todo.text}" />
         <button> Save </button>
             </form>
             </li>
