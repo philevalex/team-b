@@ -26,16 +26,14 @@ const render = ({ todos, editTodoId }) => `
               ? `
           <form onsubmit="onSaveTitle(this, event, ${todo.id})">
         <li class="list_item__todo">
-        <input name="checked" type ="checkbox" />
         <input name="text" type ="text" value="${todo.text}" />
         <button> Save </button>
             </form>
             </li>
          `
               : `
-            <li class="list_item__todo">
-            ${todo.checked ? `<input name="checked" type ="checkbox"> ` : ` `}
-            <span class="todo-text"> ${todo.text} </span>                    
+            <li class="list_item__todo ${todo.checked ? `checked` : ` `}">
+            <input type ="checkbox" onclick="onChangeStatus(${todo.id})" class="todo-text">${todo.text}                   
             <button class="delete-task-button" onclick="onRemoveTodo(${
               todo.id
             })" name="delete-2" type="reset">X</button>
@@ -65,7 +63,7 @@ function getId() {
 
 let state = {
   todos: [
-    { id: 1, text: "first", checked: true },
+    { id: 1, text: "first", checked: false },
     { id: 2, text: "second", checked: true },
     { id: 3, text: "third", checked: true },
   ],
@@ -116,6 +114,12 @@ const onEditTodo = (editTodoId) => {
   });
 };
 
+const onChangeStatus = (todoId) => {
+  setState({
+    todos: changeStatus(state.todos, todoId),
+  });
+};
+
 const onRemoveTodo = (todoId) => {
   setState({
     todos: deleteTodo(state.todos, todoId),
@@ -138,21 +142,22 @@ function addTodo(todos, { text }) {
 }
 
 function deleteTodo(todos, todoId) {
-  return todos.filter((id) => id.id !== todoId);
+  return todos.filter((todo) => todo.id !== todoId);
 }
 
-function changeStatus(todos, todoId, checked) {
+function changeStatus(todos, todoId) {
   return todos.map((todo) =>
-    todo.id === todoId ? { ...todo, checked } : todo
+    todo.id === todoId ? { ...todo, checked: !todo.checked } : todo
   );
 }
 
 function changeTodoText(todos, todoId, text) {
   return todos.map((todo) => (todo.id === todoId ? { ...todo, text } : todo));
 }
-
+/*
 function done() {
   var ele = state;
   for (var i in ele) ele[i].style.textDecoration = "line-through";
 }
+*/
 
