@@ -33,7 +33,9 @@ const render = ({ todos, editTodoId }) => `
          `
               : `
             <li class="list_item__todo ${todo.checked ? `checked` : ` `}">
-            <input type ="checkbox" onclick="onChangeStatus(${todo.id})" class="todo-text">${todo.text}                   
+            <input type ="checkbox" onclick="onChangeStatus(${
+              todo.id
+            })" class="todo-text">${todo.text}                   
             <button class="delete-task-button" onclick="onRemoveTodo(${
               todo.id
             })" name="delete-2" type="reset">X</button>
@@ -154,5 +156,3 @@ function changeStatus(todos, todoId) {
 function changeTodoText(todos, todoId, text) {
   return todos.map((todo) => (todo.id === todoId ? { ...todo, text } : todo));
 }
-
-
