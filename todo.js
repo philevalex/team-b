@@ -20,9 +20,10 @@ const render = ({ todos, editTodoId }) => `
     <div class="todo-list-window">
     
         <ul class="list-todo" type="none">
-        ${todos.map((todo) =>
-          todo.id === editTodoId
-            ? `
+        ${todos
+          .map((todo) =>
+            todo.id === editTodoId
+              ? `
           <form onsubmit="onSaveTitle(this, event, ${todo.id})">
         <li class="list_item__todo">
         <input name="checked" type ="checkbox" />
@@ -31,17 +32,22 @@ const render = ({ todos, editTodoId }) => `
             </form>
             </li>
          `
-            : `
+              : `
             <li class="list_item__todo">
-            ${todo.checked ? `<input name="checked" type ="checkbox"> `: ` `}
+            ${todo.checked ? `<input name="checked" type ="checkbox"> ` : ` `}
             <span class="todo-text"> ${todo.text} </span>                    
-            <button class="delete-task-button" onclick="onRemoveTodo(${todo.id})" name="delete-2" type="reset">X</button>
-            <button class="edit-task-button" onclick="onEditTodo(${todo.id})" name="edit" type="edit">edit</button>
+            <button class="delete-task-button" onclick="onRemoveTodo(${
+              todo.id
+            })" name="delete-2" type="reset">X</button>
+            <button class="edit-task-button" onclick="onEditTodo(${
+              todo.id
+            })" name="edit" type="edit">edit</button>
            
         </li>
         
          `
-         ).join('')}   
+          )
+          .join("")}   
         </ul>
     </div>
     <div class="right-column"></div>
@@ -53,37 +59,35 @@ let id = 0;
 
 function getId() {
   id++;
-  
+
   return id;
 }
 
 let state = {
   todos: [
-
-          { id: 1, text: "first", checked: true },
-          { id: 2, text: "second", checked: true },
-          { id: 3, text: "third", checked: true }
-    ],
-    editTodoId: null,
+    { id: 1, text: "first", checked: true },
+    { id: 2, text: "second", checked: true },
+    { id: 3, text: "third", checked: true },
+  ],
+  editTodoId: null,
 };
 const renderToDom = (template) => {
-  document.getElementById('app').innerHTML = template;
+  document.getElementById("app").innerHTML = template;
 };
 
 let setState = (newStatePart) => {
-  state = {...state, ...newStatePart};
-  const newHtml = render (state);
+  state = { ...state, ...newStatePart };
+  const newHtml = render(state);
   renderToDom(newHtml);
 };
 
-
 const getFormData = (formElement) => {
-    const formData = new FormData(formElement);
-    const data = {};
-    for (const [key, value] of formData.entries()) {
-        data[key] = value;
-    }
-    return data;
+  const formData = new FormData(formElement);
+  const data = {};
+  for (const [key, value] of formData.entries()) {
+    data[key] = value;
+  }
+  return data;
 };
 
 const onAddNewTodo = (formElement, event) => {
@@ -91,10 +95,10 @@ const onAddNewTodo = (formElement, event) => {
   const formData = getFormData(formElement);
   const newTodo = {
     text: formData.text,
-    checked: formData.checked === "on"
+    checked: formData.checked === "on",
   };
   setState({
-    todos: addTodo(state.todos, newTodo)
+    todos: addTodo(state.todos, newTodo),
   });
 };
 const onSaveTitle = (formElement, event, todoId) => {
@@ -102,7 +106,7 @@ const onSaveTitle = (formElement, event, todoId) => {
   const formData = getFormData(formElement);
   setState({
     todos: changeTodoText(state.todos, todoId, formData.text),
-    editTodoId:null,
+    editTodoId: null,
   });
 };
 
@@ -112,21 +116,19 @@ const onEditTodo = (editTodoId) => {
   });
 };
 
-const onRemoveTodo= (todoId) => { 
-setState({
-  todos: deleteTodo(state.todos, todoId)
-});
+const onRemoveTodo = (todoId) => {
+  setState({
+    todos: deleteTodo(state.todos, todoId),
+  });
 };
 
 const main = () => {
-    document.getElementById('app').innerHTML = render(state);
+  document.getElementById("app").innerHTML = render(state);
 };
 
 main();
 
-
-
-function addTodo(todos, {text}) {
+function addTodo(todos, { text }) {
   const todo = {
     text,
     checked: true,
@@ -149,10 +151,9 @@ function changeTodoText(todos, todoId, text) {
   return todos.map((todo) => (todo.id === todoId ? { ...todo, text } : todo));
 }
 
-function done(){
+function done() {
   var ele = state;
-  for (var i in ele)
-ele[i].style.textDecoration='line-through'
-  }
+  for (var i in ele) ele[i].style.textDecoration = "line-through";
+}
 
-  <button onclick="done()">b</button>
+<button onclick="done()">b</button>;
