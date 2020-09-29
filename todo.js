@@ -147,7 +147,7 @@ function deleteTodo(todos, todoId) {
 
 function changeStatus(todos, todoId) {
   return todos.map((todo) =>
-    todo.id === todoId ? { ...todo, checked: !todo.checked } : todo
+    todo.id === todoId ? { ...todo, checked: on } : todo
   );
 }
 
