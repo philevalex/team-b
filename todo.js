@@ -60,9 +60,9 @@ function getId() {
 let state = {
   todos: [
 
-          { id: 1, text: "My text", checked: false },
-          { id: 2, text: "foor", checked: true },
-          { id: 3, text: "bara", checked: false }
+          { id: 1, text: "first", checked: true },
+          { id: 2, text: "second", checked: true },
+          { id: 3, text: "third", checked: true }
     ],
     editTodoId: null,
 };
