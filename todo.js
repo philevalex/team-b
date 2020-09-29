@@ -154,10 +154,5 @@ function changeStatus(todos, todoId) {
 function changeTodoText(todos, todoId, text) {
   return todos.map((todo) => (todo.id === todoId ? { ...todo, text } : todo));
 }
-/*
-function done() {
-  var ele = state;
-  for (var i in ele) ele[i].style.textDecoration = "line-through";
-}
-*/
+
 
