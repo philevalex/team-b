@@ -156,4 +156,3 @@ function done() {
   for (var i in ele) ele[i].style.textDecoration = "line-through";
 }
 
-<button onclick="done()">b</button>;
