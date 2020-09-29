@@ -32,10 +32,8 @@ const render = ({ todos, editTodoId }) => `
             </li>
          `
               : `
-            <li class="list_item__todo ${todo.checked ? `checked` : ` `}">
-            <input type ="checkbox" onclick="onChangeStatus(${
-              todo.id
-            })" class="todo-text">${todo.text}                   
+            <li class="list_item__todo">
+            <input type ="checkbox" ${todo.checked ? `checked` : ` `} onclick="onChangeStatus(${todo.id})" class="todo-text">${todo.text}                   
             <button class="delete-task-button" onclick="onRemoveTodo(${
               todo.id
             })" name="delete-2" type="reset">X</button>
@@ -147,12 +145,19 @@ function deleteTodo(todos, todoId) {
   return todos.filter((todo) => todo.id !== todoId);
 }
 
-function changeStatus(todos, todoId) {
+function changeStatus(todos, todoId,) {
   return todos.map((todo) =>
-    todo.id === todoId ? { ...todo, checked: on } : todo
+    todo.id === todoId ? { ...todo, checked: !todo.checked } : todo
   );
 }
 
 function changeTodoText(todos, todoId, text) {
   return todos.map((todo) => (todo.id === todoId ? { ...todo, text } : todo));
 }
+/*
+function done() {
+  var ele = state;
+  for (var i in ele) ele[i].style.textDecoration = "line-through";
+}
+*/
+
